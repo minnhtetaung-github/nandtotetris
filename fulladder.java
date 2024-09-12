@@ -1,18 +1,18 @@
 class fulladder {
 
-    static int ina;
-    static int inb;
-    static int inc;
+    int ina;
+    int inb;
+    int inc;
 
-    static int sum;
-    static int carry;
+    int sum;
+    int carry;
 
-    static int sum1;
+    int sum1;
 
-    static int carry1;
-    static int carry2;
+    int carry1;
+    int carry2;
 
-    static void out(){
+    void out(){
 
         halfadder halfadder1 = new halfadder();
         halfadder1.ina = ina;
@@ -31,11 +31,7 @@ class fulladder {
         orgate orgate1 = new orgate();
         orgate1.ina = carry1;
         orgate1.inb = carry2;
-        carry = orgate1.out();
-
-
-
-
-
+        orgate1.out();
+        carry = orgate1.result;
     }
 }

@@ -1,22 +1,22 @@
-class norgate{
+public class norgate {
 
-    static int ina;
-    static int inb;
-    static int orout;
-    static int result;
+    int ina;
+    int inb;
+    int orout;
+    int result;
 
-    static int out(){
+    void out(){
 
         orgate orgate1 = new orgate();
         orgate1.ina = ina;
         orgate1.inb = inb;
-        orout = orgate1.out();
+        orgate1.out();
+        orout = orgate1.result;
 
         notgate notgate1 = new notgate();
         notgate1.ina = orout;
-        result = notgate1.out();
-
-        return result;
+        notgate1.out();
+        result = orgate1.result;
 
     }
 }

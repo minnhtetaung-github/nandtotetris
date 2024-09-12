@@ -1,22 +1,23 @@
 class andgate {
 
-    static int ina;
-    static int inb;
-    static int nandout;
-    static int result;
+    int ina;
+    int inb;
+    int nandout;
+    int result;
 
-    static int out(){
+    void out(){
 
         nandgate nandgate1 = new nandgate();
         nandgate1.ina = ina;
         nandgate1.inb = inb;
-        nandout = nandgate1.out();
+        nandgate1.out();
+        nandout = nandgate1.result;
 
         notgate notgate1 = new notgate();
         notgate1.ina = nandout;
-        result = notgate1.out();
-
-        return result;
+        notgate1.out();
+        result = notgate1.result;
 
     }
 }
+

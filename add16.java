@@ -1,14 +1,14 @@
 class add16 {
 
-    static int ina16[] = new int[16];
-    static int inb16[] = new int[16];
+    int ina16[] = new int[16];
+    int inb16[] = new int[16];
 
-    static int sum[] = new int[16];
-    static int carry[] = new int[16];
+    int sum[] = new int[16];
+    int carry[] = new int[16];
 
-    static int result16[] = new int[16];
+    int result16[] = new int[16];
 
-    static void out(){
+    void out(){
 
         fulladder fulladder1 = new fulladder();
         fulladder1.ina = ina16[15];
@@ -17,7 +17,6 @@ class add16 {
         fulladder1.out();
         sum[15] = fulladder1.sum;
         carry[15] = fulladder1.carry;
-
 
         fulladder fulladder2 = new fulladder();
         fulladder2.ina = ina16[14];
@@ -39,7 +38,7 @@ class add16 {
         fulladder4.ina = ina16[12];
         fulladder4.inb = inb16[12];
         fulladder4.inc = carry[13];
-        fulladder3.out();
+        fulladder4.out();
         sum[12] = fulladder4.sum;
         carry[12] = fulladder4.carry;
 
@@ -131,7 +130,6 @@ class add16 {
         sum[1] = fulladder15.sum;
         carry[1] = fulladder15.carry;
 
-
         fulladder fulladder16 = new fulladder();
         fulladder16.ina = ina16[0];
         fulladder16.inb = inb16[0];
@@ -144,6 +142,6 @@ class add16 {
 
 
 
-    }
 
+    }
 }

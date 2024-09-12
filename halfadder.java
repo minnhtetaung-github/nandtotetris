@@ -1,24 +1,23 @@
-public class halfadder {
+class halfadder {
 
-    static int ina;
-    static int inb;
+    int ina;
+    int inb;
 
-    static int sum;
-    static int carry;
+    int sum;
+    int carry;
 
-    static void out(){
+    void out(){
 
         xorgate xorgate1 = new xorgate();
         xorgate1.ina = ina;
         xorgate1.inb = inb;
-        sum = xorgate1.out();
+        xorgate1.out();
+        sum = xorgate1.result;
 
         andgate andgate1 = new andgate();
         andgate1.ina = ina;
         andgate1.inb = inb;
-        carry = andgate1.out();
-
-
+        andgate1.out();
+        carry = andgate1.result;
     }
-
 }

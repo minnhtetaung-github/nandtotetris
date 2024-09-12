@@ -1,21 +1,22 @@
-class xnorgate{
+class xnorgate {
 
-    static int ina;
-    static int inb;
-    static int xorout;
-    static int result;
+    int ina;
+    int inb;
+    int xorout;
+    int result;
 
-    static int out(){
+    void out(){
 
         xorgate xorgate1 = new xorgate();
         xorgate1.ina = ina;
         xorgate1.inb = inb;
-        xorout = xorgate.out();
+        xorgate1.out();
+        xorout = xorgate1.result;
 
         notgate notgate1 = new notgate();
-        notgate1.ina = xorout;
-        result = notgate1.out();
+        notgate1.ina = ina;
+        notgate1.out();
+        result = notgate1.result;
 
-        return result;
     }
 }

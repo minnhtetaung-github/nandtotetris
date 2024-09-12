@@ -1,15 +1,16 @@
 class nandgate {
-    
-    static int ina;
-    static int inb;
 
-    static int out(){
+    int ina;
+    int inb;
+    int result;
+
+    void out(){
 
         if(ina == 1 && inb == 1){
-            return 0;
+            result = 0;
         }
         else{
-            return 1;
+            result = 1;
         }
     }
 }

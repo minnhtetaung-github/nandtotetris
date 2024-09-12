@@ -1,15 +1,14 @@
-class notgate {
-    
-    static int ina;
-    static int result;
+public class notgate {
 
-    static int out(){
+    int ina;
+    int result;
+
+    void out(){
 
         nandgate nandgate1 = new nandgate();
         nandgate1.ina = ina;
         nandgate1.inb = ina;
-        result = nandgate1.out();
-
-        return result;
+        nandgate1.out();
+        result = nandgate1.result;
     }
 }

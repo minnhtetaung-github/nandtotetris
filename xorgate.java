@@ -1,40 +1,43 @@
-class xorgate{
+public class xorgate {
 
-    static int ina;
-    static int inb;
-    static int and1out;
-    static int or1out;
-    static int or2out;
-    static int not1out;
-    static int result;
+    int ina;
+    int inb;
+    int and1out;
+    int or1out;
+    int or2out;
+    int not1out;
+    int result;
 
-    static int out(){
-
+    void out() {
         andgate andgate1 = new andgate();
         andgate1.ina = ina;
         andgate1.inb = inb;
-        and1out = andgate1.out();
+        andgate1.out();
+        and1out = andgate1.result;
 
         orgate orgate1 = new orgate();
         orgate1.ina = ina;
         orgate1.inb = inb;
-        or1out = orgate1.out();
+        orgate1.out();
+        or1out = orgate1.result;
 
         notgate notgate1 = new notgate();
         notgate1.ina = or1out;
-        not1out = notgate1.out();
+        notgate1.out();
+        not1out = notgate1.result;
 
         orgate orgate2 = new orgate();
         orgate2.ina = and1out;
         orgate2.inb = not1out;
-        or2out = orgate2.out();
+        orgate2.out();
+        or2out = orgate2.result;
 
         notgate notgate2 = new notgate();
         notgate2.ina = or2out;
-        result = notgate2.out();
+        notgate2.out();
+        result = notgate2.result;
 
-        return result;
-        
 
     }
+
 }
