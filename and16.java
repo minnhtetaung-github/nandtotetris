@@ -13,8 +13,6 @@ class and16 {
         andgate1.out();
         result16[0] = andgate1.result;
 
-        System.out.println("hee hee" + result16[0]);
-
         andgate andgate2 = new andgate();
         andgate2.ina = ina16[1];
         andgate2.inb = inb16[1];
@@ -104,5 +102,6 @@ class and16 {
         andgate16.inb = inb16[15];
         andgate16.out();
         result16[15] = andgate16.result;
+
     }
 }

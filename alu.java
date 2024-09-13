@@ -1,4 +1,4 @@
-class alu {
+class alu{
 
     int ina16[] = new int[16];
     int inb16[] = new int[16];
@@ -21,8 +21,6 @@ class alu {
     int and161out[] = new int[16];
     int add161out[] = new int[16];
 
-    int i;
-
     void out(){
 
         mux16 mux161 = new mux16();
@@ -32,6 +30,7 @@ class alu {
         mux161.out();
         mux161out = mux161.result16;
 
+
         mux16 mux162 = new mux16();
         mux162.ina16 = inb16;
         mux162.inb16 = sz16;
@@ -39,13 +38,14 @@ class alu {
         mux162.out();
         mux162out = mux162.result16;
 
+
         not16 not161 = new not16();
         not161.ina16 = mux161out;
         not161.out();
         not161out = not161.result16;
 
         mux16 mux163 = new mux16();
-        mux163.ina16 = not161out;
+        mux163.ina16 = mux161out;
         mux163.inb16 = not161out;
         mux163.sel = func6[1];
         mux163.out();
@@ -73,7 +73,7 @@ class alu {
         add161.ina16 = mux163out;
         add161.inb16 = mux164out;
         add161.out();
-        add161out = add161.result16;
+        add161out = add161.sum;
 
         mux16 mux165 = new mux16();
         mux165.ina16 = and161out;
